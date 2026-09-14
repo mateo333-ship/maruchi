@@ -1145,7 +1145,12 @@ dialog.menu-detail::backdrop { background: rgba(36,26,18,.55); backdrop-filter: 
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #212121;
+  background-color: var(--bg-dark);
+  background-image:
+    linear-gradient(rgba(20,14,9,.62), rgba(20,14,9,.62)),
+    url("assets/img/wood-walnut-tile.webp");
+  background-repeat: repeat;
+  background-size: 640px 640px;
   transition: opacity .5s ease, visibility .5s ease;
 }
 .page-loader.is-hidden {
@@ -1153,9 +1158,20 @@ dialog.menu-detail::backdrop { background: rgba(36,26,18,.55); backdrop-filter: 
   visibility: hidden;
   pointer-events: none;
 }
-.page-loader .🤚 { transform: scale(1.6); margin-left: 0; }
-@media (min-width: 560px) { .page-loader .🤚 { transform: scale(2.2); } }
-@media (min-width: 900px) { .page-loader .🤚 { transform: scale(2.6); } }
+.loader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(1.4rem, 4vw, 2.2rem);
+}
+.loader-logo {
+  width: clamp(84px, 16vw, 128px);
+  height: auto;
+  display: block;
+}
+.page-loader .🤚 { transform: scale(.85); margin-left: 0; }
+@media (min-width: 560px) { .page-loader .🤚 { transform: scale(1); } }
+@media (min-width: 900px) { .page-loader .🤚 { transform: scale(1.15); } }
 html.has-loader,
 html.has-loader body { overflow: hidden; }
 
