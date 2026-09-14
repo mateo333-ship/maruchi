@@ -22,6 +22,53 @@
 <link rel="stylesheet" href="styles.css?v=20260911">
 </head>
 <body>
+<div id="page-loader" class="page-loader" aria-hidden="true">
+  <div class="🤚">
+    <div class="👉"></div>
+    <div class="👉"></div>
+    <div class="👉"></div>
+    <div class="👉"></div>
+    <div class="🌴"></div>
+    <div class="👍"></div>
+  </div>
+</div>
+<script>
+(function () {
+  var loader = document.getElementById('page-loader');
+  if (!loader) return;
+  var root = document.documentElement;
+
+  /* Marca cualquier clic en un enlace a OTRA página del propio sitio,
+     para que esa página sepa que no debe mostrar la pantalla de carga
+     (solo debe verse al abrir la web o al recargar). */
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a');
+    if (!a || !a.href) return;
+    var url;
+    try { url = new URL(a.href, location.href); } catch (err) { return; }
+    if (url.origin !== location.origin) return;
+    if (a.target && a.target !== '' && a.target !== '_self') return;
+    if (a.hasAttribute('download')) return;
+    if (url.pathname === location.pathname && url.search === location.search) return;
+    try { sessionStorage.setItem('marUchiNav', '1'); } catch (err) {}
+  }, true);
+
+  var cameFromNav = false;
+  try { cameFromNav = sessionStorage.getItem('marUchiNav') === '1'; } catch (err) {}
+
+  if (cameFromNav) {
+    try { sessionStorage.removeItem('marUchiNav'); } catch (err) {}
+    loader.style.display = 'none';
+  } else {
+    root.classList.add('has-loader');
+    window.setTimeout(function () {
+      loader.classList.add('is-hidden');
+      root.classList.remove('has-loader');
+      window.setTimeout(function () { loader.style.display = 'none'; }, 550);
+    }, 3000);
+  }
+})();
+</script>
 <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <header class="masthead masthead-on-photo" data-masthead>
