@@ -81,27 +81,32 @@
     </nav>
     <div style="display:flex; align-items:center; gap:.7rem;">
       <a class="btn btn-primary btn-sm nav-cta" href="contacto.html#mapa">Cómo llegar</a>
-      <button class="nav-toggle" data-nav-toggle aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-movil">
-        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19" stroke-linecap="round"/></svg>
-      </button>
     </div>
   </div>
 </header>
 
-<div class="mobile-menu" id="menu-movil" data-mobile-menu>
-  <ul>
-    <li><a href="index.html">Inicio</a></li>
-    <li><a href="carta.html">La Carta</a></li>
-    <li><a href="sobre-nosotros.html">Nosotros</a></li>
-    <li><a href="galeria.html">Galería</a></li>
-    <li><a href="contacto.html">Contacto</a></li>
-  </ul>
-  <div class="mobile-cta">
-    <a class="btn btn-primary" href="contacto.html#mapa">Cómo llegar</a>
-    <a class="btn btn-ghost" href="https://www.instagram.com/maruchi.coffeeandtea/" target="_blank" rel="noopener">Instagram →</a>
-  </div>
-</div>
+<nav class="mobile-dock" aria-label="Navegación móvil">
+  <a href="index.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 11.5 12 4l8 7.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 10v9h5v-5.5h2V19h5v-9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Inicio</span>
+  </a>
+  <a href="carta.html" aria-current="page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 9h13v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9Z" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 10h1.5a2.5 2.5 0 0 1 0 5H17" stroke-linecap="round"/><path d="M8 6c0-1 1-1 1-2s-1-1-1-2M12 6c0-1 1-1 1-2s-1-1-1-2" stroke-linecap="round"/></svg>
+    <span>La Carta</span>
+  </a>
+  <a href="sobre-nosotros.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21s-6.7-4.2-9.3-8.6C.9 9 2.7 5.5 6.2 5.5c2 0 3.6 1.1 4.5 2.6.9-1.5 2.5-2.6 4.5-2.6 3.5 0 5.3 3.5 3.5 6.9C18.7 16.8 12 21 12 21Z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Nosotros</span>
+  </a>
+  <a href="galeria.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5"/><circle cx="8.5" cy="9.5" r="1.6"/><path d="M20 16.5 15 11l-4 4.5-2.5-2.5-5 5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Galería</span>
+  </a>
+  <a href="contacto.html">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 21.5S5 15 5 9.8a7 7 0 1 1 14 0c0 5.2-7 11.7-7 11.7Z" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+    <span>Contacto</span>
+  </a>
+</nav>
 
 <main id="contenido">
 

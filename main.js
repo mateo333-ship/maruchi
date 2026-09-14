@@ -26,24 +26,6 @@
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-
-    var toggle = $("[data-nav-toggle]");
-    var menu = $("[data-mobile-menu]");
-    if (!toggle || !menu) return;
-    toggle.addEventListener("click", function () {
-      var open = toggle.classList.toggle("is-open");
-      menu.classList.toggle("is-open", open);
-      toggle.setAttribute("aria-expanded", open ? "true" : "false");
-      document.documentElement.style.overflow = open ? "hidden" : "";
-    });
-    $$("a", menu).forEach(function (a) {
-      a.addEventListener("click", function () {
-        toggle.classList.remove("is-open");
-        menu.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-        document.documentElement.style.overflow = "";
-      });
-    });
   }
 
   /* -----------------------------------------------------------
